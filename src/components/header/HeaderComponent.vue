@@ -1,11 +1,11 @@
 <template>
-  <nav class="bg-white rounded-b-md shadow-lg z-50 sticky top-0">
-    <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 ">
-      <div class="relative flex h-16 items-center justify-between">
+  <nav class="sticky top-0 z-50 bg-white shadow-lg rounded-b-md">
+    <div class="px-2 mx-auto max-w-7xl sm:px-6 lg:px-8 ">
+      <div class="relative flex items-center justify-between h-16">
         <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
           <!-- Mobile menu button-->
           <button type="button"
-            class="relative inline-flex items-center justify-center rounded-md p-2 text-black hover:bg-gray-200 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-700"
+            class="relative inline-flex items-center justify-center p-2 text-black rounded-md hover:bg-gray-200 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-700"
             aria-controls="mobile-menu" aria-expanded="false">
             <span class="absolute -inset-0.5"></span>
             <span class="sr-only">Open main menu</span>
@@ -29,30 +29,32 @@
             </svg>
           </button>
         </div>
-        <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-          <div class="flex shrink-0 items-center">
-            <img class="h-8 w-auto" src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=500"
+        <div class="flex items-center justify-center flex-1 sm:items-stretch sm:justify-start">
+          <div class="flex items-center shrink-0">
+            <img class="w-auto h-8" src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=500"
               alt="Your Company">
           </div>
           <div class="hidden sm:ml-6 sm:block">
             <div class="flex space-x-4">
               <!-- Current: "bg-gray-200 text-gray-900", Default: "text-black hover:bg-gray-200 hover:text-gray-700" -->
-              <a href="#" class="rounded-md bg-gray-200 px-3 py-2 text-md font-medium text-gray-900"
+              <a href="#" class="px-3 py-2 font-medium text-gray-900 bg-gray-200 rounded-md text-md"
                 aria-current="page">Inicio</a>
               <a href="#"
-                class="rounded-md px-3 py-2 text-md font-medium text-black hover:bg-gray-200 hover:text-gray-700">Ejemplos</a>
+                class="px-3 py-2 font-medium text-black rounded-md text-md hover:bg-gray-200 hover:text-gray-700">Ejemplos</a>
               <a href="#"
-                class="rounded-md px-3 py-2 text-md font-medium text-black hover:bg-gray-200 hover:text-gray-700">Comentarios</a>
+                class="px-3 py-2 font-medium text-black rounded-md text-md hover:bg-gray-200 hover:text-gray-700">Comentarios</a>
               <a href="#"
-                class="rounded-md px-3 py-2 text-md font-medium text-black hover:bg-gray-200 hover:text-gray-700">Iniciar
+                class="px-3 py-2 font-medium text-black rounded-md text-md hover:bg-gray-200 hover:text-gray-700">Iniciar
                 Sesion</a>
+              <a href="#"
+                class="px-3 py-2 font-medium text-black rounded-md text-md hover:bg-gray-200 hover:text-gray-700">Contacto</a>
             </div>
           </div>
         </div>
         <img src="../../assets/header.svg" class="w-[450px] animate-fade" alt="">
         <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
           <button type="button"
-            class="relative rounded-full bg-white p-1 text-black hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-offset-2 focus:ring-offset-white">
+            class="relative p-1 text-black bg-white rounded-full hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-offset-2 focus:ring-offset-white">
             <span class="absolute -inset-1.5"></span>
             <span class="sr-only">View notifications</span>
             <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
@@ -66,11 +68,11 @@
           <div class="relative ml-3">
             <div>
               <button @click="toggleMenu" type="button"
-                class="relative flex rounded-full bg-white text-sm focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-offset-2 focus:ring-offset-white"
+                class="relative flex text-sm bg-white rounded-full focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-offset-2 focus:ring-offset-white"
                 id="user-menu-button" aria-expanded="false" aria-haspopup="true">
                 <span class="absolute -inset-1.5"></span>
                 <span class="sr-only">Open user menu</span>
-                <img class="size-8 rounded-full"
+                <img class="rounded-full size-8"
                   src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                   alt="">
               </button>
@@ -87,7 +89,7 @@
               To: "transform opacity-0 scale-95"
           -->
             <div v-show="showMenu"
-              class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black/5 focus:outline-none"
+              class="absolute right-0 z-10 w-48 py-1 mt-2 origin-top-right bg-white rounded-md shadow-lg ring-1 ring-black/5 focus:outline-none"
               role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
               <!-- Active: "bg-gray-100 outline-none", Not Active: "" -->
               <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
@@ -104,16 +106,16 @@
 
     <!-- Mobile menu, show/hide based on menu state. -->
     <div class="sm:hidden" id="mobile-menu">
-      <div class="space-y-1 px-2 pb-3 pt-2">
+      <div class="px-2 pt-2 pb-3 space-y-1">
         <!-- Current: "bg-gray-200 text-gray-900", Default: "text-black hover:bg-gray-200 hover:text-gray-700" -->
-        <a href="#" class="block rounded-md bg-gray-200 px-3 py-2 text-base font-medium text-gray-900"
+        <a href="#" class="block px-3 py-2 text-base font-medium text-gray-900 bg-gray-200 rounded-md"
           aria-current="page">Dashboard</a>
         <a href="#"
-          class="block rounded-md px-3 py-2 text-base font-medium text-black hover:bg-gray-200 hover:text-gray-700">Team</a>
+          class="block px-3 py-2 text-base font-medium text-black rounded-md hover:bg-gray-200 hover:text-gray-700">Team</a>
         <a href="#"
-          class="block rounded-md px-3 py-2 text-base font-medium text-black hover:bg-gray-200 hover:text-gray-700">Projects</a>
+          class="block px-3 py-2 text-base font-medium text-black rounded-md hover:bg-gray-200 hover:text-gray-700">Projects</a>
         <a href="#"
-          class="block rounded-md px-3 py-2 text-base font-medium text-black hover:bg-gray-200 hover:text-gray-700">Calendar</a>
+          class="block px-3 py-2 text-base font-medium text-black rounded-md hover:bg-gray-200 hover:text-gray-700">Calendar</a>
       </div>
     </div>
   </nav>
