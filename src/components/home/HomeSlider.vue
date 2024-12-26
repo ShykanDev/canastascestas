@@ -83,7 +83,7 @@ import { onMounted, ref } from 'vue';
 import { RouterLink } from 'vue-router'
 
 // init Swiper:
-const swiper = new Swiper();
+// const swiper = new Swiper();
 
 
 const currentPicture = ref('https://i.ibb.co/sq5SLzD/78274e89-4653-47ff-a923-e7fb415a17d9.jpg');

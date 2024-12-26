@@ -11,11 +11,12 @@
           <h3 class="mb-3 text-xl font-semibold line-through text-rose-400">$890 MXN</h3>
           <h3 class="mb-3 text-2xl font-semibold text-purple-600">$790 MXN</h3>
           <p class="mb-6 text-gray-500">Cesta Grande (más costo de envío)</p>
-          <button
+          <RouterLink :to="{ name: 'contact' }"
             class="px-6 py-2 text-lg text-white transition duration-300 bg-purple-600 rounded-full hover:bg-purple-700">
             <i class="mr-2 fas fa-shopping-cart"></i>
             Comprar
-            Cesta Grande</button>
+            Cesta Grande
+          </RouterLink>
         </div>
 
         <!-- Cesta Mediana -->
@@ -24,12 +25,13 @@
           <h3 class="mb-3 text-xl font-semibold line-through text-rose-400">$790 MXN</h3>
           <h3 class="mb-3 text-2xl font-semibold text-purple-600">$690 MXN</h3>
           <p class="mb-6 text-gray-500">Cesta Mediana (más costo de envío)</p>
-          <button
+          <RouterLink :to="{ name: 'contact' }"
             class="px-6 py-2 text-lg text-white transition duration-300 bg-purple-600 rounded-full hover:bg-purple-700">
             <i class="mr-2 fas fa-shopping-cart"></i>
 
             Comprar
-            Cesta Mediana</button>
+            Cesta Mediana
+          </RouterLink>
         </div>
 
         <!-- Cesta Chica -->
@@ -38,12 +40,13 @@
           <h3 class="mb-3 text-xl font-semibold line-through text-rose-400">$690 MXN</h3>
           <h3 class="mb-3 text-2xl font-semibold text-purple-600">$590 MXN</h3>
           <p class="mb-6 text-gray-500">Cesta Chica (más costo de envío)</p>
-          <button
+          <RouterLink :to="{ name: 'contact' }"
             class="px-6 py-2 text-lg text-white transition duration-300 bg-purple-600 rounded-full hover:bg-purple-700">
             <i class="mr-2 fas fa-shopping-cart"></i>
 
             Comprar
-            Cesta Grande</button>
+            Cesta Grande
+          </RouterLink>
         </div>
       </div>
 
@@ -74,11 +77,12 @@
           </span>
           <span>Más costo de envío</span>
         </p>
-        <button
+        <RouterLink :to="{ name: 'contact' }"
           class="px-6 py-2 text-lg text-white transition duration-300 bg-purple-600 rounded-full hover:bg-purple-700">
           <i class="mr-2 fas fa-shopping-cart"></i>
           Comprar
-          Conjunto</button>
+          Conjunto
+        </RouterLink>
       </div>
 
       <!-- Descuento al por mayor -->
@@ -91,11 +95,12 @@
         <h3 class="mb-3 text-2xl font-semibold text-purple-600">Al por mayor</h3>
         <p class="mb-6 text-gray-500">Compra 6 conjuntos con 30% de descuento y <span
             class="font-bold text-purple-600"><i class="mr-2 fas fa-truck"></i>Envío gratis</span></p>
-        <button
+        <RouterLink :to="{ name: 'contact' }"
           class="px-6 py-2 text-lg text-white transition duration-300 bg-purple-600 rounded-full hover:bg-purple-700">
           <i class="mr-2 fas fa-shopping-cart"></i>
           Comprar
-          Mayoreo</button>
+          Mayoreo
+        </RouterLink>
       </div>
 
     </div>

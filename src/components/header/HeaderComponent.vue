@@ -31,8 +31,7 @@
         </div>
         <div class="flex items-center justify-center flex-1 sm:items-stretch sm:justify-start">
           <div class="flex items-center shrink-0">
-            <img class="w-auto h-8" src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=500"
-              alt="Your Company">
+            <img class="w-auto h-8" src="../../assets/ssla.png" alt="Your Company">
           </div>
           <div class="hidden sm:ml-6 sm:block">
             <div class="flex space-x-4">
@@ -61,7 +60,8 @@
           <span class="animate-fade-left animate-delay-150">cestas</span>
           <span class="animate-fade-left animate-delay-200">.com</span>
         </div>
-        <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+        <div v-if="1 + 2 === 5"
+          class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
           <button type="button"
             class="relative p-1 text-black bg-white rounded-full hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-offset-2 focus:ring-offset-white">
             <span class="absolute -inset-1.5"></span>
