@@ -56,9 +56,9 @@
           </div>
         </div>
         <div class="flex items-center justify-center text-lg font-Chelsea">
-          <span class="animate-fade-left animate-delay-75">canastas</span>
-          <span class="animate-fade-left animate-delay-150">cestas</span>
-          <span class="animate-fade-left animate-delay-200">.com</span>
+          <span translate="no" class="animate-fade-left animate-delay-75">canastas</span>
+          <span translate="no" class="animate-fade-left animate-delay-150">cestas</span>
+          <span translate="no" class="animate-fade-left animate-delay-200">.com</span>
         </div>
         <div v-if="1 + 2 === 5"
           class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
