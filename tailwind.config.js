@@ -40,6 +40,8 @@ module.exports = {
         Poppins: ['Poppins', 'sans-serif'],
         // emblema font
         Emblema: ['Emblema One', 'sans-serif'],
+        // chelsea font
+        Chelsea: ['Chelsea Market', 'cursive'],
       },
     },
   },

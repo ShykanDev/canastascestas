@@ -1,5 +1,5 @@
 <template>
-  <nav class="sticky top-0 z-50 bg-white shadow-lg rounded-b-md">
+  <nav class="z-50 w-full bg-white shadow-lg rounded-b-md">
     <div class="px-2 mx-auto max-w-7xl sm:px-6 lg:px-8 ">
       <div class="relative flex items-center justify-between h-16">
         <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -37,21 +37,30 @@
           <div class="hidden sm:ml-6 sm:block">
             <div class="flex space-x-4">
               <!-- Current: "bg-gray-200 text-gray-900", Default: "text-black hover:bg-gray-200 hover:text-gray-700" -->
-              <a href="#" class="px-3 py-2 font-medium text-gray-900 bg-gray-200 rounded-md text-md"
-                aria-current="page">Inicio</a>
-              <a href="#"
-                class="px-3 py-2 font-medium text-black rounded-md text-md hover:bg-gray-200 hover:text-gray-700">Ejemplos</a>
-              <a href="#"
-                class="px-3 py-2 font-medium text-black rounded-md text-md hover:bg-gray-200 hover:text-gray-700">Comentarios</a>
-              <a href="#"
+              <router-link :to="{ name: 'home' }"
+                class="px-3 py-2 font-medium text-gray-900 bg-gray-200 rounded-md text-md"
+                aria-current="page">Inicio</router-link>
+              <a v-if="route.name === 'home'" href="#ejemplos "
+                class="px-3 py-2 font-medium text-black rounded-md text-md hover:bg-gray-200 hover:text-gray-700">
+                Ejemplos</a>
+              <router-link :to="{ name: 'signup' }"
+                class="px-3 py-2 font-medium text-black rounded-md text-md hover:bg-gray-200 hover:text-gray-700">Registrarse</router-link>
+              <router-link :to="{ name: 'signin' }"
                 class="px-3 py-2 font-medium text-black rounded-md text-md hover:bg-gray-200 hover:text-gray-700">Iniciar
-                Sesion</a>
-              <a href="#"
-                class="px-3 py-2 font-medium text-black rounded-md text-md hover:bg-gray-200 hover:text-gray-700">Contacto</a>
+                Sesion</router-link>
+              <router-link :to="{ name: 'contact' }"
+                class="px-3 py-2 font-medium text-black rounded-md text-md hover:bg-gray-200 hover:text-gray-700">Contacto</router-link>
+              <router-link :to="{ name: 'comments' }"
+                class="px-3 py-2 font-medium text-black rounded-md text-md hover:bg-gray-200 hover:text-gray-700">Comentarios</router-link>
             </div>
+
           </div>
         </div>
-        <img src="../../assets/header.svg" class="w-[450px] animate-fade" alt="">
+        <div class="flex items-center justify-center text-lg font-Chelsea">
+          <span class="animate-fade-left animate-delay-75">canastas</span>
+          <span class="animate-fade-left animate-delay-150">cestas</span>
+          <span class="animate-fade-left animate-delay-200">.com</span>
+        </div>
         <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
           <button type="button"
             class="relative p-1 text-black bg-white rounded-full hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-offset-2 focus:ring-offset-white">
@@ -124,11 +133,13 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue';
+import { useRoute, useRouter } from 'vue-router';
 
 const showMenu = ref(false);
 
 const toggleMenu = (): boolean => showMenu.value = !showMenu.value;
 
+const route = useRoute();
 </script>
 
 <style scoped></style>

@@ -2,7 +2,6 @@
   <MainLayout>
     <template #main>
       <HomeSlider />
-      <div class="my-3" id="ejemplos"></div>
       <ExamplesCard v-for="obj in data" :key="obj.title" :benefits="obj.benefits" :title="obj.title" class="py-9"
         :profile-picture="obj.profilePicture" :profile-name="obj.profileName"
         :profile-description="obj.profileDescription" :img1="obj.img1" :img2="obj.img2" />
@@ -15,9 +14,9 @@
 <script lang="ts" setup>
 import HomeSlider from '@/components/home/HomeSlider.vue';
 import MainLayout from '@/layouts/MainLayout.vue';
-import ExamplesCard from './home/ExamplesCard.vue';
-import CTACard1 from './cta/CTACard1.vue';
-import CTACard2 from './cta/CTACard2.vue';
+import ExamplesCard from '../home/ExamplesCard.vue';
+import CTACard1 from '../cta/CTACard1.vue';
+import CTACard2 from '../cta/CTACard2.vue';
 
 
 
@@ -54,8 +53,8 @@ const data = [
         description: 'La canasta cuadrada es perfecta para guardar lápices, bolígrafos y otros materiales de escritura. Su diseño permite mantenerlos organizados y siempre a la mano, ideal para oficinas o espacios de estudio. Además, es fácil de limpiar y su material es duradero.',
       },
       {
-        title: 'Versatilidad en Cosméticos',
-        description: 'El diseño versátil de esta canasta cuadrada permite usarla para guardar cosméticos, perfumes y otros productos de belleza. Es perfecta para mantener tus productos de belleza organizados y siempre a la mano.',
+        title: 'Versatilidad Decorativa',
+        description: 'El diseño versátil de esta canasta cuadrada permite usarla para diferentes fines decorativos en tu hogar u oficina. Es perfecta para guardar pequeños objetos, agregando un toque de organización y estilo.',
       },
       {
         title: 'Material Resistente',
@@ -67,7 +66,7 @@ const data = [
     profileDescription: 'Uso esta canasta para organizar mis lápices y bolígrafos en mi oficina. Todo se ve ordenado y mis colegas siempre preguntan dónde la conseguí.',
     theme: 'white',
     img1: 'https://i.ibb.co/gth2kgT/sqLapiz.png',
-    img2: 'https://i.ibb.co/h821ypg/Picsart-24-12-26-15-46-35-356.png'
+    img2: 'https://i.ibb.co/9Hk009S/ovalMd.png'
   },
   {
     title: 'Canasta Circular',

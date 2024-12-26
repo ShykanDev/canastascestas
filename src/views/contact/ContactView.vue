@@ -1,7 +1,7 @@
 <template>
   <MainLayout>
     <template #main>
-      <div class="px-6 py-24 bg-white isolate sm:py-32 lg:px-8">
+      <div class="px-6 py-24 bg-white isolate sm:py-32 lg:px-8 animate-fade animate-duration-1000">
         <div class="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]"
           aria-hidden="true">
           <div
@@ -9,10 +9,12 @@
             style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
           </div>
         </div>
-        <div class="max-w-2xl mx-auto text-center">
-          <h2 class="text-4xl font-semibold tracking-tight text-gray-900 text-balance sm:text-5xl">Contactar con ventas
+        <div class="max-w-5xl mx-auto text-center">
+          <h2 class="text-4xl font-semibold tracking-tight text-gray-900 text-balance sm:text-5xl">Contacto de ventas
           </h2>
-          <p class="mt-2 text-gray-600 text-lg/8">Aute magna irure deserunt veniam aliqua magna enim voluptate.</p>
+          <p class="mt-2 text-lg text-gray-600 font-Poppins">Envíenos un mensaje, y nosotros nos pondremos en contacto
+            con usted a
+            la brevedad.</p>
         </div>
         <form action="#" method="POST" class="max-w-xl mx-auto mt-16 sm:mt-20">
           <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
@@ -33,7 +35,8 @@
               </div>
             </div>
             <div class="sm:col-span-2">
-              <label for="phone-number" class="block font-semibold text-gray-900 text-sm/6">Número de teléfono</label>
+              <label for="phone-number" class="block font-semibold text-gray-900 text-sm/6">Número de teléfono
+                <span class="text-xs text-slate-600">(opcional)</span></label>
               <div class="mt-2.5">
                 <div
                   class="flex rounded-md bg-white outline outline-1 -outline-offset-1 outline-gray-300 has-[input:focus-within]:outline has-[input:focus-within]:outline-2 has-[input:focus-within]:-outline-offset-2 has-[input:focus-within]:outline-indigo-600">

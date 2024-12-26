@@ -15,19 +15,53 @@ const router = createRouter({
       component: () => import('../views/contact/ContactView.vue'),
     },
     {
+      path: '/signUp',
+      name: 'signup',
+      component: import('../views/login/SignInView.vue'),
+    },
+    {
       path: '/signIn',
       name: 'signin',
-      component: import('../views/login/SignInView.vue'),
+      component: import('../views/login/SignUpView.vue'),
     },
     {
       path: '/about',
       name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
       component: () => import('../views/AboutView.vue'),
     },
+    {
+      path: '/faq',
+      name: 'faq',
+      component: () => import('../views/faq/FAQView.vue'),
+    },
+    {
+      path: '/privacy',
+      name: 'privacy',
+      component: () => import('../views/privacy/PrivacyView.vue'),
+    },
+    {
+      path: '/terms',
+      name: 'terms',
+      component: () => import('../views/terms/TermsView.vue'),
+    },
+    {
+      path: '/aboutus',
+      name: 'aboutus',
+      component: () => import('../views/about/AboutUsView.vue'),
+    },
+    {
+      path: '/comments',
+      name: 'comments',
+      component: () => import('../views/comments/CommentsView.vue'),
+    },
   ],
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition
+    } else {
+      return { top: 0 }
+    }
+  },
 })
 
 export default router
