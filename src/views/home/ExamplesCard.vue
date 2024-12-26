@@ -7,7 +7,7 @@
         <p class="text-7xl">Ejemplos de {{ title }}</p>
       </div>
       <div>
-        <div class="py-3" v-for="(benefit, index) in benefits" :key="index">
+        <div class="py-3" v-for="(benefit, index) in benefits as IBenefit[]" :key="index">
           <h2 class="text-xl font-semibold text-purple-900">{{ benefit.title }}</h2>
           <p class="text-gray-700">{{ benefit.description }}</p>
         </div>
@@ -49,6 +49,12 @@
 </template>
 
 <script lang="ts" setup>
+
+
+interface IBenefit {
+  title: string;
+  description: string;
+}
 const props = defineProps({
   title: {
     type: String,
