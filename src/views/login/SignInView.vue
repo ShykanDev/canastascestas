@@ -15,7 +15,7 @@
                 </label>
                 <input
                   class="w-full px-4 py-2 transition-all duration-300 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-800"
-                  id="username" placeholder="Ingresa tu nombre de usuario" required="" type="text" v-model="name" />
+                  id="username" placeholder="Ingresa tu nombre de usuario" required="true" type="text" v-model="name" />
                 <p class="hidden mt-2 text-sm text-red-500" id="usernameError">
                   El nombre de usuario es obligatorio.
                 </p>
@@ -26,7 +26,7 @@
                 </label>
                 <input
                   class="w-full px-4 py-2 transition-all duration-300 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-800"
-                  id="email" placeholder="Ingresa tu correo electrónico" required="" type="email" v-model="email" />
+                  id="email" placeholder="Ingresa tu correo electrónico" required="true" type="email" v-model="email" />
                 <p class="hidden mt-2 text-sm text-red-500" id="emailError">
                   Por favor, ingresa un correo electrónico válido.
                 </p>
@@ -37,7 +37,8 @@
                 </label>
                 <input
                   class="w-full px-4 py-2 transition-all duration-300 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-800"
-                  id="password" placeholder="Ingresa tu contraseña" required="" type="password" v-model="password" />
+                  id="password" placeholder="Ingresa tu contraseña" required="true" type="password"
+                  v-model="password" />
                 <p class="hidden mt-2 text-sm text-red-500" id="passwordError">
                   La contraseña es obligatoria.
                 </p>
@@ -48,7 +49,7 @@
                 </label>
                 <input
                   class="w-full px-4 py-2 transition-all duration-300 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-800"
-                  id="confirm-password" placeholder="Confirma tu contraseña" required="" type="password"
+                  id="confirm-password" placeholder="Confirma tu contraseña" required="true" type="password"
                   v-model="cpassword" />
                 <p class="hidden mt-2 text-sm text-red-500" id="confirmPasswordError">
                   Las contraseñas no coinciden.
