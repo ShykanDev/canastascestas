@@ -2,7 +2,8 @@
   <nav class="z-50 w-full bg-white shadow-lg ">
     <div class="px-2 mx-auto max-w-7xl sm:px-6 lg:px-8">
       <div class="relative flex items-center justify-between h-16">
-        <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+        <!-- mobile menu -->
+        <div class="sticky inset-y-0 top-0 left-0 flex items-center w-full sm:hidden">
           <!-- Mobile menu button-->
           <button type="button"
             class="relative inline-flex items-center justify-center p-2 text-black rounded-md hover:bg-gray-200 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-700"
@@ -31,7 +32,7 @@
         </div>
         <div class="flex items-center justify-center flex-1 sm:items-stretch sm:justify-start">
           <div class="flex items-center shrink-0">
-            <img class="w-auto h-8" src="../../assets/ssla.png" alt="Your Company">
+            <img class="hidden w-auto h-8 sm:block" src="../../assets/ssla.png" alt="Your Company">
           </div>
           <div class="hidden sm:ml-6 sm:block">
             <div class="flex space-x-4">
@@ -143,7 +144,7 @@
     </div>
 
     <!-- Mobile menu, show/hide based on menu state. -->
-    <div class="bg-red-900 sm:hidden" id="mobile-menu">
+    <div class="hidden bg-red-900" id="mobile-menu">
       <div class="px-2 pt-2 pb-3 space-y-1">
         <!-- Current: "bg-gray-200 text-gray-900", Default: "text-black hover:bg-gray-200 hover:text-gray-700" -->
         <a href="#" class="block px-3 py-2 text-base font-medium text-gray-900 bg-gray-200 rounded-md"

@@ -8,6 +8,43 @@
         :profile-description="obj.profileDescription" :img1="obj.img1" :img2="obj.img2" />
       <CTACard1 />
       <CTACard2 />
+      <section class="container px-4 py-8 mx-auto font-Poppins">
+        <h2 class="mb-6 text-3xl font-bold text-left text-gray-400">Más de nuestros productos</h2>
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
+          <!-- Ad 1: Cyanprash -->
+          <div class="p-6 bg-white rounded-lg shadow-md">
+            <img src="https://chyawanprash.com.mx/images/explosion-chyawanprash.png" alt="Cyanprash"
+              class="w-full h-auto mb-4 rounded">
+            <h3 class="mb-2 text-xl font-bold text-gray-800">Cyanprash</h3>
+            <p class="text-gray-600">Producto 100% natural, libre de conservadores y químicos. Ingredientes y procesos
+              directos de la India.</p>
+            <a href="https://chyawanprash.com.mx"
+              class="inline-block px-4 py-2 mt-4 text-white bg-blue-500 rounded hover:bg-blue-600">Más Información</a>
+          </div>
+
+          <!-- Ad 2: Pasta Neem -->
+          <div class="p-6 bg-white rounded-lg shadow-md">
+            <img src="https://pastaneem.com/img/wpp16.png" alt="Pasta Neem" class="w-full h-auto mb-4 rounded">
+            <h3 class="mb-2 text-xl font-bold text-gray-800">Pasta Neem</h3>
+            <p class="text-gray-600">Nuestra pasta es natural a base de NEEM, un árbol originario de la India con
+              múltiples propiedades benéficas.</p>
+            <a href="https://pastaneem.com"
+              class="inline-block px-4 py-2 mt-4 text-white bg-green-500 rounded hover:bg-green-600">Más Información</a>
+          </div>
+
+          <!-- Ad 3: Jabón Neemo Prasadam -->
+          <div class="p-6 bg-white rounded-lg shadow-md">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_977173-MLM42046641384_062020-O.webp" alt="Jabón Neemo Prasadam"
+              class="w-full h-auto mb-4 rounded">
+            <h3 class="mb-2 text-xl font-bold text-gray-800">Jabón Neemo Prasadam</h3>
+            <p class="text-gray-600">Jabón natural a base de aceite de NEEM, libre de grasas animales y con múltiples
+              beneficios para la piel.</p>
+            <a href="https://articulo.mercadolibre.com.mx/MLM-781290580-jabon-neem-prasadam-india-ayurveda-natural-_JM"
+              class="inline-block px-4 py-2 mt-4 text-white bg-yellow-500 rounded hover:bg-yellow-600">Más
+              Información</a>
+          </div>
+        </div>
+      </section>
     </template>
   </MainLayout>
 </template>

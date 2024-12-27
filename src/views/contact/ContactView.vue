@@ -1,7 +1,7 @@
 <template>
   <MainLayout>
     <template #main>
-      <div class="px-6 py-24 bg-white isolate sm:py-32 lg:px-8 animate-fade animate-duration-1000">
+      <div class="px-6 py-10 bg-white isolate sm:py-4 lg:px-8 animate-fade animate-duration-1000">
         <div class="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]"
           aria-hidden="true">
           <div
@@ -79,10 +79,6 @@
                     class="transition duration-200 ease-in-out transform translate-x-0 bg-white rounded-full shadow-sm size-4 ring-1 ring-gray-900/5"></span>
                 </button>
               </div>
-              <label class="text-gray-600 text-sm/6" id="switch-1-label">
-                Al seleccionar esto, aceptas nuestra
-                <a href="#" class="font-semibold text-indigo-600">política de privacidad</a>.
-              </label>
             </div>
           </div>
           <div class="mt-10">

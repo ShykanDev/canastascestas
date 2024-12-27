@@ -13,7 +13,7 @@
         </div>
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7525.079184837638!2d-99.17607!3d19.432289!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1f8b32758939b%3A0xf34fbd07bc47d6dd!2sGutenberg%20128%2C%20Anzures%2C%20Miguel%20Hidalgo%2C%2011590%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1sen!2smx!4v1735271208505!5m2!1sen!2smx"
-          width="400" height="300" style="border:0;" allowfullscreen="true" loading="lazy"
+          class="" style="border:0;" allowfullscreen="true" loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"></iframe>
         <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-2">
           <div>

@@ -2,9 +2,9 @@
   <div
     :class="{ 'bg-slate-50': theme === 'white', 'bg-slate-100': theme === 'black', 'border-b-4 border-sky-800': true }"
     class="flex flex-wrap w-full px-4 space-x-3 min-h-dvh lg:flex-nowrap">
-    <section class="flex flex-col w-7/12 justify-evenly font-Poppins">
+    <section class="flex flex-col w-full md:w-7/12 justify-evenly font-Poppins">
       <div>
-        <p class="text-7xl">Ejemplos de {{ title }}</p>
+        <p class="text-3xl md:text-7xl">Ejemplos de {{ title }}</p>
       </div>
       <div>
         <div class="py-3" v-for="(benefit, index) in benefits as IBenefit[]" :key="index">
@@ -38,7 +38,7 @@
 
       </div>
     </section>
-    <section class="flex flex-col justify-between w-5/12 ">
+    <section class="flex flex-row justify-between w-5/12 mt-4 md:flex-col md:mt-0">
       <img :src="img1" alt="">
       <img :src="img2" alt="">
     </section>
