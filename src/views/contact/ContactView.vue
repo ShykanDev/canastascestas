@@ -67,19 +67,7 @@
                   class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"></textarea>
               </div>
             </div>
-            <div class="flex gap-x-4 sm:col-span-2">
-              <div class="flex items-center h-6">
-                <!-- Enabled: "bg-indigo-600", Not Enabled: "bg-gray-200" -->
-                <button type="button"
-                  class="flex flex-none w-8 p-px transition-colors duration-200 ease-in-out bg-gray-200 rounded-full cursor-pointer ring-1 ring-inset ring-gray-900/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                  role="switch" aria-checked="false" aria-labelledby="switch-1-label">
-                  <span class="sr-only">Aceptar políticas</span>
-                  <!-- Enabled: "translate-x-3.5", Not Enabled: "translate-x-0" -->
-                  <span aria-hidden="true"
-                    class="transition duration-200 ease-in-out transform translate-x-0 bg-white rounded-full shadow-sm size-4 ring-1 ring-gray-900/5"></span>
-                </button>
-              </div>
-            </div>
+
           </div>
           <div class="mt-10">
             <button type="button"
