@@ -14,11 +14,11 @@
       </div>
       <div class="max-w-full mx-auto overflow-hidden bg-white rounded-lg shadow-lg">
         <div class="flex">
-          <div class="w-1/3">
-            <img alt="A placeholder image showing a generic user profile picture" class="object-cover w-full h-full"
-              height="300" :src="profilePicture" width="300" />
+          <div class="w-1/6">
+            <img alt="A placeholder image showing a generic user profile picture" class="object-cover w-full h-auto"
+              height="100" :src="profilePicture" width="100" />
           </div>
-          <div class="w-2/3 p-4">
+          <div class="w-5/6 p-4">
             <h2 class="mb-2 text-xl font-semibold text-rose-900">
               {{ profileName }}
             </h2>
@@ -26,19 +26,16 @@
               {{ profileDescription }}
             </p>
             <div class="flex items-center">
-              <i class="mr-1 text-yellow-500 fas fa-star">
-              </i>
-              <i class="mr-1 text-yellow-500 fas fa-star">
-              </i>
-              <i class="mr-1 text-yellow-500 fas fa-star">
-              </i>
-              <i class="mr-1 text-yellow-500 fas fa-star">
-              </i>
-              <i class="mr-1 text-yellow-500 fas fa-star-half-alt">
-              </i>
+              <i class="mr-1 text-yellow-500 fas fa-star"></i>
+              <i class="mr-1 text-yellow-500 fas fa-star"></i>
+              <i class="mr-1 text-yellow-500 fas fa-star"></i>
+              <i class="mr-1 text-yellow-500 fas fa-star"></i>
+              <i class="mr-1 text-yellow-500 fas fa-star-half-alt"></i>
             </div>
           </div>
         </div>
+
+
       </div>
     </section>
     <section class="flex flex-col justify-between w-5/12 ">
@@ -48,12 +45,12 @@
   </div>
 </template>
 
+
+
 <script lang="ts" setup>
-
-
 interface IBenefit {
-  title: string;
-  description: string;
+  title: string,
+  description: string
 }
 const props = defineProps({
   title: {

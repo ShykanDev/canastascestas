@@ -1,6 +1,6 @@
 <template>
-  <nav class="z-50 w-full bg-white shadow-lg rounded-b-md">
-    <div class="px-2 mx-auto max-w-7xl sm:px-6 lg:px-8 ">
+  <nav class="z-50 w-full bg-white shadow-lg ">
+    <div class="px-2 mx-auto max-w-7xl sm:px-6 lg:px-8">
       <div class="relative flex items-center justify-between h-16">
         <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
           <!-- Mobile menu button-->
@@ -35,30 +35,59 @@
           </div>
           <div class="hidden sm:ml-6 sm:block">
             <div class="flex space-x-4">
-              <!-- Current: "bg-gray-200 text-gray-900", Default: "text-black hover:bg-gray-200 hover:text-gray-700" -->
-              <router-link :to="{ name: 'home' }"
-                class="px-3 py-2 font-medium text-gray-900 bg-gray-200 rounded-md text-md"
-                aria-current="page">Inicio</router-link>
-              <a v-if="route.name === 'home'" href="#ejemplos "
+              <!-- Home -->
+              <router-link :to="{ name: 'home' }" :class="{
+                'bg-slate-100 text-gray-900': route.name === 'home',
+                'text-black hover:bg-gray-200 hover:text-gray-700': route.name !== 'home'
+              }" class="px-3 py-2 font-medium rounded-md text-md" aria-current="page">
+                Inicio
+              </router-link>
+
+              <!-- Examples (only visible on 'home') -->
+              <a v-if="route.name === 'home'" href="#ejemplos"
                 class="px-3 py-2 font-medium text-black rounded-md text-md hover:bg-gray-200 hover:text-gray-700">
-                Ejemplos</a>
-              <router-link :to="{ name: 'signup' }"
-                class="px-3 py-2 font-medium text-black rounded-md text-md hover:bg-gray-200 hover:text-gray-700">Registrarse</router-link>
-              <router-link :to="{ name: 'signin' }"
-                class="px-3 py-2 font-medium text-black rounded-md text-md hover:bg-gray-200 hover:text-gray-700">Iniciar
-                Sesion</router-link>
-              <router-link :to="{ name: 'contact' }"
-                class="px-3 py-2 font-medium text-black rounded-md text-md hover:bg-gray-200 hover:text-gray-700">Contacto</router-link>
-              <router-link :to="{ name: 'comments' }"
-                class="px-3 py-2 font-medium text-black rounded-md text-md hover:bg-gray-200 hover:text-gray-700">Comentarios</router-link>
+                Ejemplos
+              </a>
+
+              <!-- Signup -->
+              <router-link :to="{ name: 'signup' }" :class="{
+                'bg-slate-100 text-gray-900': route.name === 'signup',
+                'text-black hover:bg-gray-200 hover:text-gray-700': route.name !== 'signup'
+              }" class="px-3 py-2 font-medium rounded-md text-md">
+                Registrarse
+              </router-link>
+
+              <!-- Signin -->
+              <router-link :to="{ name: 'signin' }" :class="{
+                'bg-slate-100 text-gray-900': route.name === 'signin',
+                'text-black hover:bg-gray-200 hover:text-gray-700': route.name !== 'signin'
+              }" class="px-3 py-2 font-medium rounded-md text-md">
+                Iniciar Sesión
+              </router-link>
+
+              <!-- Contact -->
+              <router-link :to="{ name: 'contact' }" :class="{
+                'bg-slate-100 text-gray-900': route.name === 'contact',
+                'text-black hover:bg-gray-200 hover:text-gray-700': route.name !== 'contact'
+              }" class="px-3 py-2 font-medium rounded-md text-md">
+                Contacto
+              </router-link>
+
+              <!-- Comments -->
+              <router-link :to="{ name: 'comments' }" :class="{
+                'bg-slate-100 text-gray-900': route.name === 'comments',
+                'text-black hover:bg-gray-200 hover:text-gray-700': route.name !== 'comments'
+              }" class="px-3 py-2 font-medium rounded-md text-md">
+                Comentarios
+              </router-link>
             </div>
 
           </div>
         </div>
         <div class="flex items-center justify-center text-lg font-Chelsea">
-          <span translate="no" class="animate-fade-left animate-delay-75">canastas</span>
-          <span translate="no" class="animate-fade-left animate-delay-150">cestas</span>
-          <span translate="no" class="animate-fade-left animate-delay-200">.com</span>
+          <span translate="no" class="text-purple-800 animate-fade-left animate-delay-75">canastas</span>
+          <span translate="no" class="text-purple-500 animate-fade-left animate-delay-150">cestas</span>
+          <span translate="no" class="animate-fade-left animate-delay-200 text-fuchsia-400">.com</span>
         </div>
         <div v-if="1 + 2 === 5"
           class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
@@ -114,7 +143,7 @@
     </div>
 
     <!-- Mobile menu, show/hide based on menu state. -->
-    <div class="sm:hidden" id="mobile-menu">
+    <div class="bg-red-900 sm:hidden" id="mobile-menu">
       <div class="px-2 pt-2 pb-3 space-y-1">
         <!-- Current: "bg-gray-200 text-gray-900", Default: "text-black hover:bg-gray-200 hover:text-gray-700" -->
         <a href="#" class="block px-3 py-2 text-base font-medium text-gray-900 bg-gray-200 rounded-md"
@@ -129,11 +158,50 @@
     </div>
   </nav>
 
+  <!-- Additional content below the navbar -->
+  <div class="hidden shadow-lg bg-slate-100 md:block rounded-b-md">
+    <div class="gap-4 lg:flex lg:items-center lg:justify-around">
+      <!-- Location -->
+      <div class="flex items-center gap-2">
+        <i class="text-2xl text-purple-400 fas fa-map-marker-alt"></i>
+        <a class="text-sm font-medium text-gray-700 transition-colors hover:text-orange-600 lg:text-base font-Poppins"
+          href="https://www.google.com.mx/maps/place/Gutenberg+128,+Anzures,+Miguel+Hidalgo,+11590+Ciudad+de+M%C3%A9xico,+CDMX/@19.4322888,-99.1760704,17z/data=!3m1!4b1!4m6!3m5!1s0x85d1f8b32758939b:0xf34fbd07bc47d6dd!8m2!3d19.4322888!4d-99.1760704!16s%2Fg%2F11c4n3lm2g?entry=ttu&g_ep=EgoyMDI0MTEwNS4wIKXMDSoASAFQAw%3D%3D"
+          target="_blank">
+          Gutenberg #128 Anzures, Miguel Hidalgo, 11590 Ciudad de México
+        </a>
+      </div>
+
+      <!-- Phone Numbers -->
+      <div class="flex items-center gap-2">
+        <i class="text-2xl text-green-600 fas fa-phone-alt"></i>
+        <a href="tel:+525563950178"
+          class="text-sm font-medium text-gray-700 transition-colors hover:text-orange-600 lg:text-base font-Poppins">
+          +52 55 6395 0178
+        </a>
+        <i class="text-2xl text-green-600 fas fa-phone-alt"></i>
+        <a href="tel:+525563950179"
+          class="text-sm font-medium text-gray-700 transition-colors hover:text-orange-600 lg:text-base font-Poppins">
+          +52 55 6395 0179
+        </a>
+      </div>
+
+      <!-- WhatsApp -->
+      <div class="flex items-center gap-2">
+        <i class="text-2xl fab fa-whatsapp text-emerald-500"></i>
+        <a href="https://wa.me/525562516687"
+          class="text-sm font-medium text-gray-700 transition-colors hover:text-emerald-600 lg:text-base font-Poppins"
+          target="_blank" rel="noopener noreferrer">
+          +52 5562516687
+        </a>
+      </div>
+    </div>
+  </div>
+
 </template>
 
 <script lang="ts" setup>
 import { ref } from 'vue';
-import { useRoute, useRouter } from 'vue-router';
+import { useRoute } from 'vue-router';
 
 const showMenu = ref(false);
 

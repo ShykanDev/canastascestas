@@ -21,7 +21,7 @@
           <hr class="border-t border-gray-300">
           <div class="flex items-center justify-between">
             <h2 class="w-1/2 pr-4 text-lg font-semibold text-right">¿Ofrecen envío gratis?</h2>
-            <p class="w-1/2 pl-4 mt-2">Contamos con envío gratis para nuestros productos por mayoreo (6 o más). Además,
+            <p class="w-1/2 pl-4 mt-2">Contamos con envío gratis para nuestros productos por mayoreo (3 o más). Además,
               ofrecemos un
               descuento del 30% a partir de 6 conjuntos para mayoristas. Estamos aquí para hacer que su experiencia de
               compra sea lo más conveniente y económica posible.</p>

@@ -93,7 +93,7 @@
         </div>
         <i class="mb-4 text-4xl text-purple-600 fas fa-box-open"></i>
         <h3 class="mb-3 text-2xl font-semibold text-purple-600">Al por mayor</h3>
-        <p class="mb-6 text-gray-500">Compra 6 conjuntos con 30% de descuento y <span
+        <p class="mb-6 text-gray-500">Compra 3 conjuntos con 30% de descuento y <span
             class="font-bold text-purple-600"><i class="mr-2 fas fa-truck"></i>Envío gratis</span></p>
         <RouterLink :to="{ name: 'contact' }"
           class="px-6 py-2 text-lg text-white transition duration-300 bg-purple-600 rounded-full hover:bg-purple-700">
