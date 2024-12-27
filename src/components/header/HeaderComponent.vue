@@ -175,10 +175,10 @@
       <!-- Location -->
       <div class="flex items-center gap-2">
         <i class="text-2xl text-purple-400 fas fa-map-marker-alt"></i>
-        <a class="text-sm font-medium text-gray-700 transition-colors hover:text-orange-600 lg:text-base font-Poppins"
+        <a class="text-xs font-medium text-gray-700 transition-colors hover:text-orange-600 lg:text-base font-Poppins"
           href="https://www.google.com.mx/maps/place/Gutenberg+128,+Anzures,+Miguel+Hidalgo,+11590+Ciudad+de+M%C3%A9xico,+CDMX/@19.4322888,-99.1760704,17z/data=!3m1!4b1!4m6!3m5!1s0x85d1f8b32758939b:0xf34fbd07bc47d6dd!8m2!3d19.4322888!4d-99.1760704!16s%2Fg%2F11c4n3lm2g?entry=ttu&g_ep=EgoyMDI0MTEwNS4wIKXMDSoASAFQAw%3D%3D"
           target="_blank">
-          Gutenberg #128 Anzures, Miguel Hidalgo, 11590 Ciudad de México
+          Gutenberg #128 Anzures, Miguel Hidalgo, 11590 CDMX.
         </a>
       </div>
 
@@ -203,6 +203,14 @@
           class="text-sm font-medium text-gray-700 transition-colors hover:text-emerald-600 lg:text-base font-Poppins"
           target="_blank" rel="noopener noreferrer">
           +52 5562516687
+        </a>
+      </div>
+      <div class="flex items-center gap-2">
+        <i class="text-2xl fas fa-envelope text-slate-500"></i>
+        <a href="mailto:informes@prasadam.mx"
+          class="text-sm font-medium text-gray-700 transition-colors hover:text-emerald-600 lg:text-base font-Poppins"
+          target="_blank" rel="noopener noreferrer">
+          informes@prasadam.mx
         </a>
       </div>
     </div>
