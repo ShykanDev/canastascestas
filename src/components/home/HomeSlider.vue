@@ -38,31 +38,36 @@
               <div
                 class="absolute top-0 bottom-0 left-0 right-0 flex items-center justify-center w-full h-full bg-black bg-opacity-0">
                 <article
-                  class="flex flex-col items-center justify-center w-[95%] h-[95%] rounded-lg shadow-2xl bg-white bg-opacity-90">
+                  :class="{ 'bg-yellow-400': img.color.value === 'bg-yellow-500', 'bg-orange-500': img.color.value === 'bg-orange-500', 'bg-green-500': img.color.value === 'bg-green-500' }"
+                  class="flex flex-col items-center justify-center w-[80%] h-[80%] rounded-full shadow-2xl ">
                   <!-- Título con ícono -->
 
                   <!-- Imagen del producto -->
                   <img :src="img.img" :alt="img.alt" :class="{ 'w-full': img.title === 'Gif' }"
-                    class="mb-4 bg-white border-4 border-yellow-50 rounded-lg shadow-lg w-[265px] hover:scale-150 ease-in-out duration-300 transition-transform">
+                    class="mb-4 bg- border-4 bg-white border-yellow-50 rounded-lg shadow-lg w-[265px] hover:scale-150 ease-in-out duration-300 transition-transform">
                   <!-- Precios -->
-                  <div v-show="img.title !== 'Gif'" class="flex items-center justify-center gap-2 space-x-3">
-                    <h3 class="flex items-center gap-2 text-lg text-gray-500 line-through font-Poppins">
+                  <div v-show="img.title !== 'Gif'"
+                    :class="{ 'text-slate-700': img.color.value === 'bg-yellow-500', 'text-white': img.color.value !== 'bg-yellow-500' }"
+                    class="flex items-center justify-center gap-2 space-x-3">
+                    <h3 class="flex items-center gap-2 text-lg line-through font-Poppins">
                       <i class="fas fa-tag"></i> ${{ img.originalPrice }}
                     </h3>
-                    <h3 class="flex items-center gap-2 text-4xl font-bold text-center text-green-600 font-Poppins">
-                      <i class="text-red-600 fas fa-fire"></i> ${{ img.discountPrice }}
+                    <h3 class="flex items-center gap-2 text-4xl font-bold text-center font-Poppins">
+                      <i class="text-orange-300 fas fa-fire "></i> ${{ img.discountPrice }}
                     </h3>
                   </div>
                   <!-- Detalles adicionales -->
                   <div v-show="img.title !== 'Gif'"
                     class="flex items-center mt-4 space-x-2 text-sm text-gray-600 font-Poppins">
-                    <div class="flex items-center gap-2">
-                      <span class="mr-2">{{ img.title }} {{ img.size }}</span>
-                      <i class="text-blue-500 fas fa-ruler-combined"></i>
+                    <div class="flex items-center gap-2 "
+                      :class="{ 'text-slate-700': img.color.value === 'bg-yellow-500', 'text-white': img.color.value !== 'bg-yellow-500' }">
+                      <!-- <span class="mr-2">{{ img.title }} {{ img.size }}</span> -->
+                      <i class="text-blue-300 fas fa-ruler-combined"></i>
                       <span>Diámetro: {{ img.diameter }}</span>
                     </div>
-                    <div class="flex items-center gap-2">
-                      <i class="text-blue-500 fas fa-arrows-alt-v"></i>
+                    <div class="flex items-center gap-2"
+                      :class="{ 'text-slate-700': img.color.value === 'bg-yellow-500', 'text-white': img.color.value !== 'bg-yellow-500' }">
+                      <i class="text-blue-300 fas fa-arrows-alt-v"></i>
                       <span>Altura: {{ img.height }}</span>
                     </div>
                   </div>
@@ -134,28 +139,33 @@ import { RouterLink } from 'vue-router'
 
 
 const currentPicture = ref('https://i.ibb.co/sq5SLzD/78274e89-4653-47ff-a923-e7fb415a17d9.jpg');
+const currentPictured = ref('https://i.ibb.co/WVkn3tP/cc79a071-76ab-40cf-9083-597d473ed8fb.jpg');
 
+// colors preferences
+const bgCard1 = ref('bg-green-500');
+const bgCard2 = ref('bg-orange-500');
+const bgCard3 = ref('bg-yellow-500');
 
 const udpateCurrentPicture = () => {
-  setInterval(() => {
-    for (let i = 0; i < pictures.length; i++) {
-      if (currentPicture.value === pictures[i].src) {
-        currentPicture.value = pictures[i + 1] ? pictures[i + 1].src : pictures[0].src;
-        return;
-      }
+  for (let i = 0; i < pictures.length; i++) {
+    if (currentPicture.value === pictures[i].src) {
+      currentPicture.value = pictures[i + 1] ? pictures[i + 1].src : pictures[0].src;
+      break;
     }
-  }, 2600);
+  }
 };
 
 
 onMounted(() => {
-  udpateCurrentPicture();
+  setInterval(udpateCurrentPicture, 2600);
+
 });
 
 const pictures = [
   {
     src: 'https://i.ibb.co/Mk5PnKn/ba31bc18-9deb-46b4-b33d-cfe72f5cada0.jpg',
     alt: 'Image 1',
+    color: bgCard1,
     size: 'Grande',
     title: 'Canasta Circular',
     originalPrice: '990',
@@ -167,6 +177,7 @@ const pictures = [
   {
     src: 'https://i.ibb.co/tY8k3Yk/d2d68551-aa9f-4f2e-88c9-e29fc6ee7d25.jpg',
     alt: 'Image 1',
+    color: bgCard2,
     size: 'Chica',
     title: 'Canasta Ovalada',
     originalPrice: '750',
@@ -178,6 +189,7 @@ const pictures = [
   {
     src: 'https://i.ibb.co/tY8k3Yk/d2d68551-aa9f-4f2e-88c9-e29fc6ee7d25.jpg',
     alt: 'Image 1',
+    color: bgCard3,
     size: 'Chica',
     title: 'Gif',
     originalPrice: 'null',
@@ -189,6 +201,7 @@ const pictures = [
   {
     src: 'https://i.ibb.co/Br0ZfTq/eb83f0d6-6d74-4e50-af65-8bab90bdb1e4.jpg',
     alt: 'Image 1',
+    color: bgCard1,
     size: 'Mediana',
     title: 'Canasta Circular',
     originalPrice: '890',
@@ -200,6 +213,7 @@ const pictures = [
   {
     src: 'https://i.ibb.co/sq5SLzD/78274e89-4653-47ff-a923-e7fb415a17d9.jpg',
     alt: 'Image 1',
+    color: bgCard2,
     size: 'Grande',
     title: 'Canasta Ovalada',
     originalPrice: '990',
@@ -211,6 +225,7 @@ const pictures = [
   {
     src: 'https://i.ibb.co/tY8k3Yk/d2d68551-aa9f-4f2e-88c9-e29fc6ee7d25.jpg',
     alt: 'Image 1',
+    color: bgCard3,
     size: 'Chica',
     title: 'Gif',
     originalPrice: 'null',
@@ -222,6 +237,7 @@ const pictures = [
   {
     src: 'https://i.ibb.co/dc9pV7X/d8afe1dc-19a5-4e10-b747-89f123c8261d.jpg',
     alt: 'Image 1',
+    color: bgCard1,
     size: 'Chica',
     title: 'Canasta Circular',
     originalPrice: '750',
@@ -233,6 +249,7 @@ const pictures = [
   {
     src: 'https://i.ibb.co/Pj062yF/d9321dc4-0bdf-4d47-a8df-55df833ecc4e.jpg',
     alt: 'Image 1',
+    color: bgCard2,
     title: 'Canasta Circular',
     size: 'Chica',
     originalPrice: '750',
@@ -244,6 +261,7 @@ const pictures = [
   {
     src: 'https://i.ibb.co/tY8k3Yk/d2d68551-aa9f-4f2e-88c9-e29fc6ee7d25.jpg',
     alt: 'Image 1',
+    color: bgCard3,
     size: 'Chica',
     title: 'Gif',
     originalPrice: 'null',
@@ -255,6 +273,7 @@ const pictures = [
   {
     src: 'https://i.ibb.co/PWb61CM/3b75cdd7-9ef6-40c5-8484-06f389c069c2.jpg',
     alt: 'Image 1',
+    color: bgCard1,
     title: 'Canasta Ovalada',
     size: 'Mediana',
     originalPrice: '890',
@@ -266,6 +285,7 @@ const pictures = [
   {
     src: 'https://i.ibb.co/VwwrP83/a27e387e-aeda-41da-ad1f-38b16d4bfa6f.jpg',
     alt: 'Image 1',
+    color: bgCard2,
     title: 'Canasta Circular',
     size: 'Grande',
     originalPrice: '990',
@@ -277,6 +297,7 @@ const pictures = [
   {
     src: 'https://i.ibb.co/tY8k3Yk/d2d68551-aa9f-4f2e-88c9-e29fc6ee7d25.jpg',
     alt: 'Image 1',
+    color: bgCard3,
     size: 'Chica',
     title: 'Gif',
     originalPrice: 'null',
@@ -288,6 +309,7 @@ const pictures = [
   {
     src: 'https://i.ibb.co/tY8k3Yk/d2d68551-aa9f-4f2e-88c9-e29fc6ee7d25.jpg',
     alt: 'Image 1',
+    color: bgCard1,
     size: 'Chica',
     title: 'Canasta Ovalada',
     originalPrice: '750',
@@ -299,6 +321,7 @@ const pictures = [
   {
     src: 'https://i.ibb.co/Br0ZfTq/eb83f0d6-6d74-4e50-af65-8bab90bdb1e4.jpg',
     alt: 'Image 1',
+    color: bgCard2,
     size: 'Mediana',
     title: 'Canasta Circular',
     originalPrice: '890',
@@ -310,6 +333,7 @@ const pictures = [
   {
     src: 'https://i.ibb.co/tY8k3Yk/d2d68551-aa9f-4f2e-88c9-e29fc6ee7d25.jpg',
     alt: 'Image 1',
+    color: bgCard3,
     size: 'Chica',
     title: 'Gif',
     originalPrice: 'null',
@@ -321,6 +345,7 @@ const pictures = [
   {
     src: 'https://i.ibb.co/sq5SLzD/78274e89-4653-47ff-a923-e7fb415a17d9.jpg',
     alt: 'Image 1',
+    color: bgCard1,
     size: 'Grande',
     title: 'Canasta Ovalada',
     originalPrice: '990',
@@ -332,6 +357,7 @@ const pictures = [
   {
     src: 'https://i.ibb.co/dc9pV7X/d8afe1dc-19a5-4e10-b747-89f123c8261d.jpg',
     alt: 'Image 1',
+    color: bgCard2,
     size: 'Chica',
     title: 'Canasta Circular',
     originalPrice: '750',
@@ -343,6 +369,7 @@ const pictures = [
   {
     src: 'https://i.ibb.co/tY8k3Yk/d2d68551-aa9f-4f2e-88c9-e29fc6ee7d25.jpg',
     alt: 'Image 1',
+    color: bgCard3,
     size: 'Chica',
     title: 'Gif',
     originalPrice: 'null',
@@ -354,6 +381,7 @@ const pictures = [
   {
     src: 'https://i.ibb.co/GVFZTT7/a5694e6f-848e-4c86-9a55-67178032ac39.jpg',
     alt: 'Image 1',
+    color: bgCard1,
     size: 'Mediana',
     title: 'Canasta Ovalada',
     originalPrice: '890',
@@ -365,6 +393,7 @@ const pictures = [
   {
     src: 'https://i.ibb.co/GVFZTT7/a5694e6f-848e-4c86-9a55-67178032ac39.jpg',
     alt: 'Image 1',
+    color: bgCard2,
     size: 'Mediana',
     title: 'Canasta Ovalada',
     originalPrice: '890',
@@ -376,6 +405,7 @@ const pictures = [
   {
     src: 'https://i.ibb.co/tY8k3Yk/d2d68551-aa9f-4f2e-88c9-e29fc6ee7d25.jpg',
     alt: 'Image 1',
+    color: bgCard3,
     size: 'Chica',
     title: 'Gif',
     originalPrice: 'null',
@@ -387,6 +417,7 @@ const pictures = [
   {
     src: 'https://i.ibb.co/Mk5PnKn/ba31bc18-9deb-46b4-b33d-cfe72f5cada0.jpg',
     alt: 'Image 1',
+    color: bgCard1,
     size: 'Grande',
     title: 'Canasta Ovalada',
     originalPrice: '990',
@@ -398,6 +429,7 @@ const pictures = [
   {
     src: 'https://i.ibb.co/tY8k3Yk/d2d68551-aa9f-4f2e-88c9-e29fc6ee7d25.jpg',
     alt: 'Image 1',
+    color: bgCard2,
     size: 'Chica',
     title: 'Gif',
     originalPrice: 'null',
@@ -409,6 +441,7 @@ const pictures = [
   {
     src: 'https://i.ibb.co/Pj062yF/d9321dc4-0bdf-4d47-a8df-55df833ecc4e.jpg',
     alt: 'Image 1',
+    color: bgCard3,
     title: 'Canasta Circular',
     size: 'Chica',
     originalPrice: '750',
@@ -420,6 +453,7 @@ const pictures = [
   {
     src: 'https://i.ibb.co/PWb61CM/3b75cdd7-9ef6-40c5-8484-06f389c069c2.jpg',
     alt: 'Image 1',
+    color: bgCard1,
     title: 'Canasta Circular',
     size: 'Mediana',
     originalPrice: '890',
@@ -431,6 +465,7 @@ const pictures = [
   {
     src: 'https://i.ibb.co/tY8k3Yk/d2d68551-aa9f-4f2e-88c9-e29fc6ee7d25.jpg',
     alt: 'Image 1',
+    color: bgCard2,
     size: 'Chica',
     title: 'Gif',
     originalPrice: 'null',
@@ -442,6 +477,7 @@ const pictures = [
   {
     src: 'https://i.ibb.co/VwwrP83/a27e387e-aeda-41da-ad1f-38b16d4bfa6f.jpg',
     alt: 'Image 1',
+    color: bgCard3,
     size: 'Grande',
     title: 'Canasta Circular',
     originalPrice: '990',
@@ -453,6 +489,7 @@ const pictures = [
   {
     src: 'https://i.ibb.co/tY8k3Yk/d2d68551-aa9f-4f2e-88c9-e29fc6ee7d25.jpg',
     alt: 'Image 1',
+    color: bgCard1,
     size: 'Chica',
     title: 'Canasta Cuadrada',
     originalPrice: '750',
@@ -464,6 +501,7 @@ const pictures = [
   {
     src: 'https://i.ibb.co/Br0ZfTq/eb83f0d6-6d74-4e50-af65-8bab90bdb1e4.jpg',
     alt: 'Image 1',
+    color: bgCard2,
     size: 'Mediana',
     title: 'Canasta Cuadrada',
     originalPrice: '890',
@@ -475,6 +513,7 @@ const pictures = [
   {
     src: 'https://i.ibb.co/sq5SLzD/78274e89-4653-47ff-a923-e7fb415a17d9.jpg',
     alt: 'Image 1',
+    color: bgCard3,
     size: 'Grande',
     title: 'Canasta Cuadrada',
     originalPrice: '990',
@@ -486,6 +525,7 @@ const pictures = [
   {
     src: 'https://i.ibb.co/dc9pV7X/d8afe1dc-19a5-4e10-b747-89f123c8261d.jpg',
     alt: 'Image 1',
+    color: bgCard1,
     size: 'Chica',
     title: 'Canasta Ovalada',
     originalPrice: '750',
@@ -497,6 +537,7 @@ const pictures = [
   {
     src: 'https://i.ibb.co/GVFZTT7/a5694e6f-848e-4c86-9a55-67178032ac39.jpg',
     alt: 'Image 1',
+    color: bgCard2,
     size: 'Mediana',
     title: 'Canasta Ovalada',
     originalPrice: '890',
@@ -508,6 +549,7 @@ const pictures = [
   {
     src: 'https://i.ibb.co/Mk5PnKn/ba31bc18-9deb-46b4-b33d-cfe72f5cada0.jpg',
     alt: 'Image 1',
+    color: bgCard3,
     size: 'Grande',
     title: 'Canasta Ovalada',
     originalPrice: '990',
@@ -524,7 +566,7 @@ onMounted(() => {
     direction: 'horizontal',
     loop: true,
     autoplay: {
-      delay: 5500,
+      delay: 12000,
       disableOnInteraction: false,
     },
     scrollbar: {

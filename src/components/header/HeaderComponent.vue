@@ -82,8 +82,10 @@
                 Comentarios
               </router-link>
             </div>
-
           </div>
+        </div>
+        <div class="flex items-center justify-end max-h-full ">
+          <img src="https://i.ibb.co/VMmfs2Y/thmjl.png" alt="" class="w-24 mr-11 animate-fade-down">
         </div>
         <div class="flex items-center justify-center text-lg font-Chelsea">
           <span translate="no" class="text-purple-800 animate-fade-left animate-delay-75">canastas</span>
@@ -152,9 +154,6 @@
         <!-- Current: "bg-gray-200 text-gray-900", Default: "text-black hover:bg-gray-200 hover:text-gray-700" -->
         <router-link :to="{ name: 'home' }"
           class="block px-3 py-2 text-base font-medium text-black rounded-md hover:bg-gray-200 hover:text-gray-700">Home</router-link>
-
-
-
         <router-link :to="{ name: 'signup' }"
           class="block px-3 py-2 text-base font-medium text-black rounded-md hover:bg-gray-200 hover:text-gray-700">Registrarse</router-link>
 

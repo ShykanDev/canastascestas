@@ -5,7 +5,10 @@
       <div class="my-3" id="ejemplos"></div>
       <ExamplesCard v-for="obj in data" :key="obj.title" :benefits="obj.benefits" :title="obj.title" class="py-9"
         :profile-picture="obj.profilePicture" :profile-name="obj.profileName"
-        :profile-description="obj.profileDescription" :img1="obj.img1" :img2="obj.img2" />
+        :profile-description="obj.profileDescription" :img1="obj.img1" :img2="obj.img2" :desc-indian1="obj.descIndian1"
+        :desc-indian2="obj.descIndian2" :info-indian1="obj.infoIndian1" :info-indian2="obj.infoIndian2"
+        :title-indian1="obj.titleIndian1" :title-indian2="obj.titleIndian2" :img1-india="obj.img1Indian"
+        :img2-indian="obj.img2Indian" :img2-india="obj.img2Indian" />
       <CTACard1 />
       <CTACard2 />
       <section class="container px-4 py-8 mx-auto font-Poppins">
@@ -15,7 +18,7 @@
           <div class="p-6 bg-white rounded-lg shadow-md">
             <img src="https://chyawanprash.com.mx/images/explosion-chyawanprash.png" alt="Cyanprash"
               class="w-full h-auto mb-4 rounded">
-            <h3 class="mb-2 text-xl font-bold text-gray-800">Cyanprash</h3>
+            <h3 class="mb-2 text-xl font-bold text-gray-800">Chyawanprash</h3>
             <p class="text-gray-600">Producto 100% natural, libre de conservadores y químicos. Ingredientes y procesos
               directos de la India.</p>
             <a href="https://chyawanprash.com.mx"
@@ -81,7 +84,15 @@ const data = [
     profileDescription: 'Invité a una amiga a casa y le encantó mi canasta de frutas. Me pidió información y ahora ella también tiene una, siempre llenándola con frutas frescas para su familia.',
     theme: 'white',
     img1: 'https://i.ibb.co/VDRdpDW/oval-Fruits.png',
-    img2: 'https://i.ibb.co/9Hk009S/ovalMd.png'
+    img2: 'https://i.ibb.co/9Hk009S/ovalMd.png',
+    titleIndian1: 'Ganesha',
+    titleIndian2: 'Indra',
+    descIndian1: 'Ganesha es uno de los dioses más populares en el hinduismo. Con su cabeza de elefante y cuerpo humano, es adorado como el dios que elimina obstáculos y guía a los devotos hacia la sabiduría y la prosperidad.',
+    descIndian2: 'Indra es un dios guerrero que preside sobre las lluvias y el trueno. Es una figura importante en el panteón hindú y es conocido por sus batallas y su papel como protector del orden cósmico.',
+    infoIndian1: 'Ganesha, el dios con cabeza de elefante, es conocido como el eliminador de obstáculos. Se le invoca al comenzar nuevas tareas y proyectos. Además, es el patrón de la sabiduría, el conocimiento y las artes.',
+    infoIndian2: 'Indra es el dios hindú del trueno, la lluvia, y la guerra. Es el rey de los dioses en el panteón védico y se le representa como un guerrero valiente montando su elefante Airavata.',
+    img1Indian: 'https://i.ibb.co/sqmynYH/ganesha.jpg',
+    img2Indian: 'https://i.ibb.co/XySTxJx/indra.jpg',
   },
   {
     title: 'Canasta Cuadrada',
@@ -104,7 +115,15 @@ const data = [
     profileDescription: 'Uso esta canasta para organizar mis lápices y bolígrafos en mi oficina. Todo se ve ordenado y mis colegas siempre preguntan dónde la conseguí.',
     theme: 'white',
     img1: 'https://i.ibb.co/gth2kgT/sqLapiz.png',
-    img2: 'https://i.ibb.co/h821ypg/Picsart-24-12-26-15-46-35-356.png'
+    img2: 'https://i.ibb.co/h821ypg/Picsart-24-12-26-15-46-35-356.png',
+    titleIndian1: 'Agni',
+    titleIndian2: 'Brahma',
+    descIndian1: 'Agni es considerado el dios del fuego, esencial en los rituales védicos. Es responsable de la purificación espiritual y es invocado en los sacrificios para transmitir las ofrendas a los dioses.',
+    descIndian2: 'Brahma es el dios creador dentro de la Trimurti, encargado de la creación del universo y todo lo que en él habita. Es venerado por su sabiduría y su capacidad de dar vida a todas las criaturas.',
+    infoIndian1: 'Agni es el dios hindú del fuego. Es el mediador entre los dioses y los humanos, llevando las ofrendas a los cielos a través del fuego. En la mitología védica, Agni también representa la purificación y el poder transformador del fuego.',
+    infoIndian2: 'Brahma es el dios hindú de la creación, parte de la Trimurti (junto a Vishnu y Shiva). Se le considera el creador del universo y de todas las formas de vida. Su papel es crear, mantener y destruir el universo.',
+    img1Indian: 'https://i.ibb.co/Zf2v5bL/agni.jpg',
+    img2Indian: 'https://i.ibb.co/pr7NQ9h/brahma.jpg',
   },
   {
     title: 'Canasta Circular',
@@ -127,10 +146,57 @@ const data = [
     profileDescription: 'Me encanta esta canasta para guardar galletas. Las tengo en la mesa de la cocina, y mis hijos siempre se emocionan al ver las galletas organizadas en ella.',
     theme: 'white',
     img1: 'https://i.ibb.co/wc2Pzcw/cr-Galletas.png',
-    img2: 'https://i.ibb.co/L60BbX6/crPan.png'
+    img2: 'https://i.ibb.co/L60BbX6/crPan.png',
+    titleIndian1: 'Saraswati',
+    titleIndian2: 'Surya',
+    descIndian1: 'Saraswati es la diosa de la sabiduría y las artes. Venerada por estudiantes y artistas, es conocida por su capacidad para otorgar conocimiento y creatividad. Su imagen más común es con un libro y un instrumento musical.',
+    descIndian2: 'Surya es el dios solar, cuyo resplandor da vida y energía a todo el universo. En la mitología hindú, Surya es una figura central que representa la luz, la salud y la vitalidad.',
+    infoIndian1: 'Saraswati es la diosa hindú del conocimiento, la música, las artes, y la sabiduría. Es la consorte de Brahma y se la representa tocando un instrumento musical, simbolizando el flujo de sabiduría.',
+    infoIndian2: 'Surya es el dios del sol en la mitología hindú. Se le considera el rey de los planetas y el dador de vida, y su energía es responsable del ciclo de la vida en la Tierra.',
+    img1Indian: 'https://i.ibb.co/D7bWWv2/saraswati.jpg',
+    img2Indian: 'https://i.ibb.co/XyFKCnc/surya.jpg',
   }
 ];
 
+
+const a = [
+  {
+    "name": "Agni",
+    "img": "https://i.ibb.co/Zf2v5bL/agni.jpg",
+    "titleIndian": "Agni es el dios hindú del fuego. Es el mediador entre los dioses y los humanos, llevando las ofrendas a los cielos a través del fuego. En la mitología védica, Agni también representa la purificación y el poder transformador del fuego.",
+    "descIndian": "Agni es considerado el dios del fuego, esencial en los rituales védicos. Es responsable de la purificación espiritual y es invocado en los sacrificios para transmitir las ofrendas a los dioses."
+  },
+  {
+    "name": "Brahma",
+    "img": "https://i.ibb.co/pr7NQ9h/brahma.jpg",
+    "titleIndian": "Brahma es el dios hindú de la creación, parte de la Trimurti (junto a Vishnu y Shiva). Se le considera el creador del universo y de todas las formas de vida. Su papel es crear, mantener y destruir el universo.",
+    "descIndian": "Brahma es el dios creador dentro de la Trimurti, encargado de la creación del universo y todo lo que en él habita. Es venerado por su sabiduría y su capacidad de dar vida a todas las criaturas."
+  },
+  {
+    "name": "Ganesha",
+    "img": "https://i.ibb.co/sqmynYH/ganesha.jpg",
+    "titleIndian": "Ganesha, el dios con cabeza de elefante, es conocido como el eliminador de obstáculos. Se le invoca al comenzar nuevas tareas y proyectos. Además, es el patrón de la sabiduría, el conocimiento y las artes.",
+    "descIndian": "Ganesha es uno de los dioses más populares en el hinduismo. Con su cabeza de elefante y cuerpo humano, es adorado como el dios que elimina obstáculos y guía a los devotos hacia la sabiduría y la prosperidad."
+  },
+  {
+    "name": "Indra",
+    "img": "https://i.ibb.co/XySTxJx/indra.jpg",
+    "titleIndian": "Indra es el dios hindú del trueno, la lluvia, y la guerra. Es el rey de los dioses en el panteón védico y se le representa como un guerrero valiente montando su elefante Airavata.",
+    "descIndian": "Indra es un dios guerrero que preside sobre las lluvias y el trueno. Es una figura importante en el panteón hindú y es conocido por sus batallas y su papel como protector del orden cósmico."
+  },
+  {
+    "name": "Saraswati",
+    "img": "https://i.ibb.co/D7bWWv2/saraswati.jpg",
+    "titleIndian": "Saraswati es la diosa hindú del conocimiento, la música, las artes, y la sabiduría. Es la consorte de Brahma y se la representa tocando un instrumento musical, simbolizando el flujo de sabiduría.",
+    "descIndian": "Saraswati es la diosa de la sabiduría y las artes. Venerada por estudiantes y artistas, es conocida por su capacidad para otorgar conocimiento y creatividad. Su imagen más común es con un libro y un instrumento musical."
+  },
+  {
+    "name": "Surya",
+    "img": "https://i.ibb.co/XyFKCnc/surya.jpg",
+    "titleIndian": "Surya es el dios del sol en la mitología hindú. Se le considera el rey de los planetas y el dador de vida, y su energía es responsable del ciclo de la vida en la Tierra.",
+    "descIndian": "Surya es el dios solar, cuyo resplandor da vida y energía a todo el universo. En la mitología hindú, Surya es una figura central que representa la luz, la salud y la vitalidad."
+  }
+]
 
 
 

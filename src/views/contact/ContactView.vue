@@ -21,7 +21,7 @@
             <div>
               <label for="first-name" class="block font-semibold text-gray-900 text-sm/6">Nombre</label>
               <div class="mt-2.5">
-                <input type="text" name="first-name" id="first-name" autocomplete="given-name"
+                <input type="text" v-model="name" name="first-name" id="first-name" autocomplete="given-name"
                   class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600">
               </div>
             </div>
@@ -30,7 +30,7 @@
             <div class="sm:col-span-2">
               <label for="email" class="block font-semibold text-gray-900 text-sm/6">Correo electrónico</label>
               <div class="mt-2.5">
-                <input type="email" name="email" id="email" autocomplete="email"
+                <input type="email" v-model="email" name="email" id="email" autocomplete="email"
                   class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600">
               </div>
             </div>
@@ -54,7 +54,7 @@
                         clip-rule="evenodd" />
                     </svg>
                   </div>
-                  <input type="text" name="phone-number" id="phone-number"
+                  <input type="text" v-model="phone" name="phone-number" id="phone-number"
                     class="block min-w-0 grow py-1.5 pl-1 pr-3 text-base text-gray-900 placeholder:text-gray-400 focus:outline focus:outline-0 sm:text-sm/6"
                     placeholder="+52 123456789">
                 </div>
@@ -63,14 +63,14 @@
             <div class="sm:col-span-2">
               <label for="message" class="block font-semibold text-gray-900 text-sm/6">Mensaje</label>
               <div class="mt-2.5">
-                <textarea name="message" id="message" rows="4"
+                <textarea name="message" v-model="message" id="message" rows="4"
                   class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"></textarea>
               </div>
             </div>
 
           </div>
           <div class="mt-10">
-            <button type="button"
+            <button @click="sendEmail" type="button"
               class="block w-full rounded-md bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Contactar</button>
           </div>
         </form>
@@ -82,9 +82,56 @@
 </template>
 
 <script lang="ts" setup>
+
+
 import MainLayout from '@/layouts/MainLayout.vue';
+import { ref } from 'vue';
+import emailjs from '@emailjs/browser';
+
+const name = ref('');
+const subject = ref('');
+const email = ref('');
+const message = ref('');
+const phone = ref();
 
 
+const sendEmail = async () => {
+  if (!name.value || !email.value || !message.value) {
+    alert('Por favor, complete todos los campos.');
+    return;
+  }
+  if (!phone.value) {
+    phone.value = 'No se proporciono un número de teléfono';
+  }
+  if (!subject.value) {
+    subject.value = 'Sin asunto proporcionado';
+  }
+  const templateParams = {
+    name: name.value,
+    subject: subject.value,
+    email: email.value,
+    phone: phone.value,
+    message: message.value,
+    reply_to: email.value
+  };
+
+  try {
+    await emailjs.send(
+      'service_3nl9wkf.', // Reemplaza con tu Service ID
+      'template_2q2mc52', // Reemplaza con tu Template ID
+      templateParams,
+      'fXlbInB-wrOGPiUbH' // Reemplaza con la clave pública que obtuviste
+    );
+    name.value = '';
+    subject.value = '';
+    email.value = '';
+    message.value = '';
+
+  } catch (error) {
+    console.error('Error al enviar el correo:', error);
+
+  }
+};
 </script>
 
 <style scoped></style>

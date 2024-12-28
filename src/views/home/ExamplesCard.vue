@@ -3,8 +3,36 @@
     :class="{ 'bg-slate-50': theme === 'white', 'bg-slate-100': theme === 'black', 'border-b-4 border-sky-800': true }"
     class="flex flex-wrap w-full px-4 space-x-3 min-h-dvh lg:flex-nowrap">
     <section class="flex flex-col w-full md:w-7/12 justify-evenly font-Poppins">
-      <div>
+      <div class="flex flex-col">
         <p class="text-3xl md:text-7xl">Ejemplos de {{ title }}</p>
+        <!-- <div class="flex space-x-1">
+          <img :src="img1India" class="rounded-3xl w-96">
+          <img :src="img2India" class="rounded-3xl w-96">
+        </div> -->
+        <div class="flex space-x-1">
+          <!-- Primer imagen con hover -->
+          <div class="relative group">
+            <img :src="img1India" class="rounded-3xl w-96">
+            <div
+              class="absolute inset-0 flex flex-col items-center justify-center p-4 text-center text-white transition-opacity duration-300 bg-black bg-opacity-75 opacity-0 group-hover:opacity-100">
+              <h3 class="text-lg font-bold">{{ titleIndian1 }}</h3>
+              <p class="mt-2 text-sm">{{ descIndian1 }}</p>
+              <p class="mt-2">{{ infoIndian1 }}</p>
+            </div>
+          </div>
+
+          <!-- Segunda imagen con hover -->
+          <div class="relative group">
+            <img :src="img2India" class="rounded-3xl w-96">
+            <div
+              class="absolute inset-0 flex flex-col items-center justify-center p-4 text-center text-white transition-opacity duration-300 bg-black bg-opacity-75 opacity-0 group-hover:opacity-100">
+              <h3 class="text-lg font-bold">{{ titleIndian2 }}</h3>
+              <p class="mt-2 text-sm">{{ descIndian2 }}</p>
+              <p class="mt-2">{{ infoIndian2 }}</p>
+            </div>
+          </div>
+        </div>
+
       </div>
       <div>
         <div class="py-3" v-for="(benefit, index) in benefits as IBenefit[]" :key="index">
@@ -97,7 +125,40 @@ const props = defineProps({
   img2: {
     type: String,
     default: 'https://i.ibb.co/9Hk009S/ovalMd.png'
+  },
+  titleIndian1: {
+    type: String,
+    default: 'Agni'
+  },
+  titleIndian2: {
+    type: String,
+    default: 'Brahma'
+  },
+  descIndian1: {
+    type: String,
+    default: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos beatae maiores nemo error quisquam qui distinctio adipisci illum incidunt accusantium!'
+  },
+  descIndian2: {
+    type: String,
+    default: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos beatae maiores nemo error quisquam qui distinctio adipisci illum incidunt accusantium!'
+  },
+  infoIndian1: {
+    type: String,
+    default: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos beatae maiores nemo error quisquam qui distinctio adipisci illum incidunt accusantium!'
+  },
+  infoIndian2: {
+    type: String,
+    default: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos beatae maiores nemo error quisquam qui distinctio adipisci illum incidunt accusantium!'
+  },
+  img1India: {
+    type: String,
+    default: 'https://i.ibb.co/Zf2v5bL/agni.jpg'
+  },
+  img2India: {
+    type: String,
+    default: 'https://i.ibb.co/pr7NQ9h/brahma.jpg'
   }
+
 })
 </script>
 
