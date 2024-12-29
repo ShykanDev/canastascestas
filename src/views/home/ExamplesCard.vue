@@ -4,20 +4,28 @@
     class="flex flex-wrap w-full px-4 space-x-3 min-h-dvh lg:flex-nowrap">
     <section class="flex flex-col w-full md:w-7/12 justify-evenly font-Poppins">
       <div class="flex flex-col">
-        <p class="text-3xl md:text-7xl">Ejemplos de {{ title }}</p>
+        <div>
+          <div class="relative flex ">
+            <p class="w-full text-3xl md:text-7xl">Ejemplos de {{ title }}</p>
+            <img v-if="title.toLowerCase() == 'canasta ovalada'"
+              class="absolute hidden w-64 p-0 transition-transform duration-300 ease-in-out bg-white border-4 border-orange-700 rounded-full sm:block -top-10 -right-44 :hover:scale-150 "
+              src="https://i.ibb.co/K60jttw/a.png" alt="">
+          </div>
+          <!-- <img src="" alt=""> -->
+        </div>
         <!-- <div class="flex space-x-1">
           <img :src="img1India" class="rounded-3xl w-96">
           <img :src="img2India" class="rounded-3xl w-96">
         </div> -->
-        <div class="flex space-x-1">
+        <div class="flex my-6 space-x-1">
           <!-- Primer imagen con hover -->
           <div class="relative group">
-            <img :src="img1India" class="rounded-3xl w-96">
+            <img :src="img1India" class=" rounded-3xl w-96">
             <div
               class="absolute inset-0 flex flex-col items-center justify-center p-4 text-center text-white transition-opacity duration-300 bg-black bg-opacity-75 opacity-0 group-hover:opacity-100">
-              <h3 class="text-lg font-bold">{{ titleIndian1 }}</h3>
-              <p class="mt-2 text-sm">{{ descIndian1 }}</p>
-              <p class="mt-2">{{ infoIndian1 }}</p>
+              <h3 class="text-xs font-bold sm:text-lg sm:block">{{ titleIndian1 }}</h3>
+              <p class="hidden mt-2 text-xs sm:block">{{ descIndian1 }}</p>
+              <p class="hidden mt-2 text-xs sm:block">{{ infoIndian1 }}</p>
             </div>
           </div>
 
@@ -27,8 +35,8 @@
             <div
               class="absolute inset-0 flex flex-col items-center justify-center p-4 text-center text-white transition-opacity duration-300 bg-black bg-opacity-75 opacity-0 group-hover:opacity-100">
               <h3 class="text-lg font-bold">{{ titleIndian2 }}</h3>
-              <p class="mt-2 text-sm">{{ descIndian2 }}</p>
-              <p class="mt-2">{{ infoIndian2 }}</p>
+              <p class="hidden mt-2 text-xs sm:block">{{ descIndian2 }}</p>
+              <p class="hidden mt-2 text-xs sm:block">{{ infoIndian2 }}</p>
             </div>
           </div>
         </div>

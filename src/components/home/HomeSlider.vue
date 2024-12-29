@@ -21,11 +21,14 @@
         <div class="font-bold text-white animate-fade-left animate-delay-200"><span>Duradero</span></div>
         <div class="font-bold text-white animate-fade-left animate-delay-500"><span>Alta resistencia</span></div>
       </div> -->
-        <RouterLink :to="{ name: 'contact' }"
-          class="flex items-center justify-center px-4 py-4 text-2xl font-bold text-white transition duration-300 ease-in-out bg-purple-500 rounded-full cursor-pointer max-w-64 hover:bg-purple-600">
-          <i class="mr-2 fas fa-shopping-cart"></i>
-          Comprar Ahora
-        </RouterLink>
+        <div class="relative flex items-center justify-between w-full ">
+          <RouterLink :to="{ name: 'contact' }"
+            class="flex items-center justify-center px-4 py-4 text-2xl font-bold text-white transition duration-300 ease-in-out bg-purple-500 rounded-full cursor-pointer max-w-64 hover:bg-purple-600">
+            <i class="mr-2 fas fa-shopping-cart"></i>
+            Comprar Ahora
+          </RouterLink>
+          <img src="https://i.ibb.co/vXqK5p7/b.png" class="absolute w-80 -right-32 -top-28" alt="">
+        </div>
       </article>
       <article class="relative w-full md:w-2/3">
         <!-- Slider main container -->
